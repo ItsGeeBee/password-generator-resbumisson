@@ -1,7 +1,9 @@
 //Assignment Code //
 var generateBtn = document.querySelector("#generate");
+var password = document.querySelector('#password');
 
 // Global variables //
+var passwordSring ="";
 var lengthRange = "";
 var includeSpecialChar;
 var includeNumber;
@@ -15,7 +17,7 @@ var charLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var charUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 // Prompt to confirm how many characters the user would like in their password
-function generatePassword() {
+function writePassword() {
     var lengthRange = (prompt("Please pick a password length between 8 - 128 characters"));
   
    
@@ -47,11 +49,19 @@ function generatePassword() {
 
     if (includeUpperCase) {
       passwordCharacters = passwordCharacters.concat(charUpper)
-    }
+    };
 
       console.log(passwordCharacters)
-}
 
+      for (let i = 0; i < lengthRange; i++) {
+        var calculate = Math.floor(Math.random() * passwordCharacters.length);
+        var calcuated = passwordCharacters[calculate];
+        passwordSring += calcuated
+      }
+
+      console.log(passwordSring);
+    return passwordSring 
+};  
 
 
 generateBtn.addEventListener("click", writePassword);
