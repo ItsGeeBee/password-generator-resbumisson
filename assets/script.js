@@ -51,3 +51,7 @@ function generatePassword() {
 
       console.log(passwordCharacters)
 }
+
+
+
+generateBtn.addEventListener("click", writePassword);
