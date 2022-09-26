@@ -1,6 +1,19 @@
-//Assignment Code //
+
+// Assignment Code
 var generateBtn = document.querySelector("#generate");
-var password = document.querySelector('#password');
+
+// Write password to the #password input
+function generatePassword() {
+  var password = writePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", generatePassword);
+
 
 // Global variables //
 var passwordSring ="";
@@ -60,8 +73,6 @@ function writePassword() {
       }
 
       console.log(passwordSring);
-    return passwordSring 
+     return passwordSring.toString();
+
 };  
-
-
-generateBtn.addEventListener("click", writePassword);
